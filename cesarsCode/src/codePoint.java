@@ -14,6 +14,11 @@ public class codePoint {
 
         String result = Encoder.encode(inputForEncoding,step);
         System.out.println("Encodede word looks like: "+result);
+        System.out.println("Now we try to decode result");
+
+        String decResult = Decoder.decode(result,step);
+
+        System.out.println("Decoded word look's like: "+decResult);
     }
 
 }

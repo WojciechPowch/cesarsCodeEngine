@@ -6,7 +6,7 @@ public class Encoder {
     private static int step;
 
     private static String getEncodeChar(int position){
-        int encodeChrPosition = (position + step <= alfLength) ? (position + step)-1 : ((position + step) - alfLength) - 1;
+        int encodeChrPosition = (position + step <= alfLength) ? (position + step)-1 : ((position + step) - alfLength)-1;
         return alf.get(encodeChrPosition);
     }
 
@@ -18,7 +18,8 @@ public class Encoder {
         char[] codeArr = codedWord.toCharArray();
 
         for(int i = 0; i < codeArr.length; i++){
-            encode += getEncodeChar(i);
+            int position = alf.indexOf(String.valueOf(codeArr[i]));
+            encode += getEncodeChar(position);
         }
 
         return encode;
